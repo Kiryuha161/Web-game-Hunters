@@ -1,0 +1,97 @@
+body {
+    font-family: Impact, sans-serif;
+    color: #CE5937;
+    background-color: black;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    transform: translate(15px, 0);
+}
+
+.mainMenu ul {
+    text-align: center;
+    font-size: 40px;
+    list-style-type: none;
+    transform: translate(0, 30px);
+}
+
+button {
+    background-color: black;
+    color: #CE5937;
+    font-family: Impact, sans-serif;
+    font-size: 35px;
+}
+
+#new-game {
+    transform: translate(110px, 0);
+}
+
+.back-button {
+    float: right;
+    transform: translate(0, -80px);
+}
+
+.comment-button {
+    float: right;
+    transform: translate(0, -95px);
+}
+
+footer {
+    font-size: 30px;
+    transform: translate(0, 40px);
+}
+
+img {
+    width: 300px;
+    height: 250px;
+}
+
+footer section {
+    transform: translate(15px, 0);
+}
+
+footer p {
+    width: 1815px;
+    transform: translate(15px, 0);
+}
+
+form {
+    text-align: center;
+    transform: translate(0, 100px);
+}
+
+.registration {
+    width: 750px;
+    height: 500px;
+    border: 2px solid #CE5937;
+    transform: translate(560px, 100px);
+    background-color: white;
+    font-size: 30px;
+    font-family: Impact, sans-serif;
+}
+
+    .registration h2 {
+        text-align: center;
+        font-size: 35px;
+        font-family: Impact, sans-serif;
+    }
+
+    .registration input {
+        height: 25px;
+        transform: translate(0, -5px);
+    }
+
+nav {
+    font-size: 30px;
+    transform: translate(15px, 0);
+    border: 1px solid #CE5937;
+    width: 1825px;
+}
+
+    nav a {
+        margin: 1px;
+        padding: 0 2% 0 2%;
+        border: 1px solid #CE5937;
+    }
