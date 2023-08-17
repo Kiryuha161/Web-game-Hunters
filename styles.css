@@ -14,7 +14,9 @@ h1 {
     text-align: center;
     font-size: 40px;
     list-style-type: none;
-    transform: translate(0, 30px);
+    float: right;
+    position: relative;
+    left: 43%;
 }
 
 button {
@@ -25,7 +27,7 @@ button {
 }
 
 #new-game {
-    transform: translate(110px, 0);
+    
 }
 
 .back-button {
