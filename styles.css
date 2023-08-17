@@ -85,9 +85,10 @@ form {
 
 nav {
     font-size: 30px;
-    transform: translate(15px, 0);
+    transform: translate(75px, 0);
     border: 1px solid #CE5937;
-    width: 1825px;
+    width: 1660px;
+    display: flex;
 }
 
     nav a {
