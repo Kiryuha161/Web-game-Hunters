@@ -1,3 +1,4 @@
+//тест
 window.onload = function () {
     class Character {
         constructor() {
