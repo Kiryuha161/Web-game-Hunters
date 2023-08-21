@@ -2,12 +2,15 @@ body {
     font-family: Impact, sans-serif;
     color: #CE5937;
     background-color: black;
+    width: 1830px;
 }
 
 h1 {
     text-align: center;
     font-size: 50px;
     transform: translate(15px, 0);
+    margin-left: 820px;
+    margin-right: 1000px;
 }
 
 .mainMenu ul {
@@ -16,7 +19,7 @@ h1 {
     list-style-type: none;
     float: right;
     position: relative;
-    left: 43%;
+    left: 710px;
 }
 
 button {
