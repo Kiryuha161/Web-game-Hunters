@@ -1,49 +1,56 @@
-//тест
+п»ї//С‚РµСЃС‚
 window.onload = function () {
     class Character {
         constructor() {
             if (this.constructor === Character) {
-                throw new Error("Вы не можете вывызывать абстрактный класс");
+                throw new Error("Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ РІС‹РІС‹Р·С‹РІР°С‚СЊ Р°Р±СЃС‚СЂР°РєС‚РЅС‹Р№ РєР»Р°СЃСЃ");
             }
         }
     }
     class Hunter extends Character {
         constructor(name, surname, age, department) {
             super();
-            this.type = "Человек";
-            this.activity = "Охотник";
+            this.type = "Р§РµР»РѕРІРµРє";
+            this.activity = "РћС…РѕС‚РЅРёРє";
             this.name = name;
             this.surname = surname;
             this.age = age;
             this.department = department;
         }
     }
-    let hunters = [new Hunter("Франк", "Матье", 32, "Следователь"), new Hunter("Эмиль", "Ренуа", 25, "Военный охотник")];
+    let hunters = [new Hunter("Р¤СЂР°РЅРє", "РњР°С‚СЊРµ", 32, "РЎР»РµРґРѕРІР°С‚РµР»СЊ"), new Hunter("Р­РјРёР»СЊ", "Р РµРЅСѓР°", 25, "Р’РѕРµРЅРЅС‹Р№ РѕС…РѕС‚РЅРёРє")];
 
 
-    const table = document.createElement("table");
-    let newCell;
+    function DrawTable() {
+        const table = document.createElement("table");
+        let newCell;
 
-    for (let i = 0; i < hunters.length; i++) {
-        const newRow = document.createElement("tr");
+        for (let i = 0; i < hunters.length; i++) {
+            const newRow = document.createElement("tr");
 
-        for (let j = 0; j < 2; j++) {
-            const newCell = document.createElement("td");
+            for (let j = 0; j < 2; j++) {
+                const newCell = document.createElement("td");
 
-            if (j === 0) {
-                cellText = document.createTextNode(hunters[i].name + " " + hunters[i].surname)
+                if (j === 0) {
+                    cellText = document.createTextNode(hunters[i].name + " " + hunters[i].surname)
+                }
+                else {
+                    cellText = document.createTextNode(hunters[i].department);
+                }
+
+                newCell.appendChild(cellText);
+                newRow.appendChild(newCell);
             }
-            else {
-                cellText = document.createTextNode(hunters[i].department);
-            }
 
-            newCell.appendChild(cellText);
-            newRow.appendChild(newCell);
+            table.appendChild(newRow);
         }
 
-        table.appendChild(newRow);
+        document.body.appendChild(table);
+        table.setAttribute("border", 2);
     }
 
-    document.body.appendChild(table);
-    table.setAttribute("border", 2);
+    function GetName() {
+
+    }
+    
 }

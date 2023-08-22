@@ -27,7 +27,16 @@ button {
     color: #CE5937;
     font-family: Impact, sans-serif;
     font-size: 35px;
+    cursor: pointer;
 }
+
+    button:hover {
+        background-color: white;
+    }
+    
+    button:active {
+        background-color: gray;
+    }
 
 #new-game {
     
