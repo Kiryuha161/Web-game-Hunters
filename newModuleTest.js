@@ -8,11 +8,13 @@ import * as UIScript from './UIScript.js';
 window.onload = function () {
     let academy = new RuasAcademy();
     academy.setHunters();
-    UIScript.DrawTable(academy.hunters);
+
+    let hunter = academy.hunters[0];
     console.log("Количество охотников: ");
     console.log(academy.hunters.length);
-    let hunter = academy.hunters[0];
     console.log("Сила" + hunter.characterStat.strength);
+    
+    UIScript.DrawTable(academy.hunters);
 
 }
 

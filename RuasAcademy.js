@@ -16,10 +16,10 @@ export class RuasAcademy extends Academy {
         this.setHunters = function SetHunters() {
             for (let i = 0; i < this.capacityHunters; i++) {
                 if (GetRandomNumber(0, 101) > 35) {
-                    this.hunters[i] = new Hunter(GetName("rus", "male"), GetSurname("rus", "male"), GetRandomNumber(18, 46), "Мужчина", "Следственный департамент"); //Добавить департаменты
+                    this.hunters[i] = new Hunter(GetName("rus", "male"), GetSurname("rus", "male"), GetRandomNumber(18, 46), "Мужчина"); //Добавить департаменты
                 }
                 else {
-                    this.hunters[i] = new Hunter(GetName("rus", "female"), GetSurname("rus", "female"), GetRandomNumber(18, 46), "Женщина", "Следственный департамент");
+                    this.hunters[i] = new Hunter(GetName("rus", "female"), GetSurname("rus", "female"), GetRandomNumber(18, 46), "Женщина");
                 }
             }
 

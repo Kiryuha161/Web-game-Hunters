@@ -37,7 +37,12 @@ export class CharacterStat {
             this.leadership = GetRandomNumber(10, 41);
             this.willPower = GetRandomNumber(10, 41);
             this.brave = GetRandomNumber(10, 41);
-            this.attentivenes = GetRandomNumber(10, 41);
+            if (gender === "Женщина") {
+                this.attentivenes = GetRandomNumber(10, 41) + GetRandomNumber(0, 11);
+            } else {
+                this.attentivenes = GetRandomNumber(10, 41);
+            }
+            
             this.memory = GetRandomNumber(10, 41);
             if (age >= 40) {
                 this.totalKnowledge = GetRandomNumber(10, 41) + GetRandomNumber(0, 11);
@@ -46,7 +51,10 @@ export class CharacterStat {
             }
             this.hunterKnowledge = GetRandomNumber(1, 10);
             this.fortuna = GetRandomNumber(10, 41);
-    
+            this.magicEnergy = GetRandomNumber(0, 11);
+            this.magicControl = GetRandomNumber(0, 11);
+            this.survivalSkill = GetRandomNumber(10, 41);
+            this.technicalKnowledge = GetRandomNumber(10, 41);
         }
         }
         
