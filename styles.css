@@ -30,16 +30,37 @@ button {
     cursor: pointer;
 }
 
-    button:hover {
-        background-color: white;
-    }
-    
-    button:active {
-        background-color: gray;
-    }
+button:hover {
+    background-color: white;
+}
 
-#new-game {
-    
+button:active {
+    background-color: gray;
+}
+
+#new-game {}
+
+.next-day-button {
+    position: relative;
+    top: 100px;
+    left: 1525px;
+}
+
+.date-panel {
+    position: relative;
+    top: -30px;
+}
+
+.date {
+    position: relative;
+    left: 1515px;
+    top: 75px;
+}
+
+.mail-button {
+    position: relative;
+    top: -125px;
+    left: 25px;
 }
 
 .back-button {
@@ -86,16 +107,16 @@ form {
     font-family: Impact, sans-serif;
 }
 
-    .registration h2 {
-        text-align: center;
-        font-size: 35px;
-        font-family: Impact, sans-serif;
-    }
+.registration h2 {
+    text-align: center;
+    font-size: 35px;
+    font-family: Impact, sans-serif;
+}
 
-    .registration input {
-        height: 25px;
-        transform: translate(0, -5px);
-    }
+.registration input {
+    height: 25px;
+    transform: translate(0, -5px);
+}
 
 nav {
     font-size: 30px;
@@ -105,8 +126,8 @@ nav {
     display: flex;
 }
 
-    nav a {
-        margin: 1px;
-        padding: 0 2% 0 2%;
-        border: 1px solid #CE5937;
-    }
+nav a {
+    margin: 1px;
+    padding: 0 2% 0 2%;
+    border: 1px solid #CE5937;
+}

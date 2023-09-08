@@ -65,3 +65,13 @@ export function DrawTable(hunters) {
     document.body.appendChild(table);
     table.setAttribute("border", 2);
 }
+
+export function DisplayDate(date) {
+    /*const dateText = document.querySelector(".date");
+    dateText.textContent = date;*/
+    const dateText = document.querySelector(".date");
+  const formattedDate = date.slice(0, 10); // Извлекаем только год, месяц и день
+  dateText.textContent = formattedDate;
+}
+
+
