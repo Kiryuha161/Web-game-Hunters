@@ -1,8 +1,10 @@
-import { DisplayDate } from "./UIScript.js";
+import { DisplayDate, DisplayNewMessage } from "./UIScript.js";
+import { GetRandomNumber } from "./Utilits.js";
 
 class World {
     constructor() {
-        this.gameDate = new Date(2014, 1, 10);
+        this.gameDate = new Date(2014, 0, 10);
+        this.lastGetNewLastOperation = new Date(2014, 0, 10); 
 
         this.translateToString = function () {
             return this.gameDate.toISOString();
@@ -22,6 +24,22 @@ window.onload = function () {
     nextDayButton.onclick = function () {
         world.addDay();
         DisplayDate(world.translateToString());
+        CheckTaskCondition(world);
     }
+
+    
 };
+
+export function PerformListMessageEvent(text) {
+    const message = text;
+    DisplayNewMessage(message);
+}
+
+export function CheckTaskCondition(world) {
+    if (world.gameDate.getDate() - world.lastGetNewLastOperation.getDate() >= GetRandomNumber(1, 4)) {
+        PerformListMessageEvent("Получена заявка на выполенние задания E-категории");
+
+        world.lastGetNewLastOperation = new Date(world.gameDate);
+   }
+}
 

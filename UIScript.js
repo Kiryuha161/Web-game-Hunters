@@ -67,11 +67,16 @@ export function DrawTable(hunters) {
 }
 
 export function DisplayDate(date) {
-    /*const dateText = document.querySelector(".date");
-    dateText.textContent = date;*/
     const dateText = document.querySelector(".date");
-  const formattedDate = date.slice(0, 10); // Извлекаем только год, месяц и день
-  dateText.textContent = formattedDate;
+    const formattedDate = date.slice(0, 10); // Извлекаем только год, месяц и день
+    dateText.textContent = formattedDate;
+}
+
+export function DisplayNewMessage(text) {
+    const operationText = document.querySelector(".list-message");
+    const listItem = document.createElement("li");
+    listItem.textContent = text;
+    operationText.appendChild(listItem);
 }
 
 
