@@ -2,6 +2,9 @@ import { Academy } from './Academy.js';
 import { Character } from './Character.js';
 import { Hunter } from './Hunter.js';
 import { GetRandomNumber, GetName, GetSurname } from './Utilits.js';
+import { DisplayDate, DisplayNewMessage, DisplayNewTextMessage } from "./UIScript.js";
+import { PerformListMessageEvent } from './World.js';
+//import { PerformListMessageEvent, World } from './World.js';
 
 
 export class RuasAcademy extends Academy {
@@ -24,6 +27,14 @@ export class RuasAcademy extends Academy {
             }
 
         }     
+
+        this.getListMessage = function(text) {
+            return text;
+        }
+        
+        this.getTextMessage = function(contentText) {
+            return contentText;
+        }
 
     }
 }

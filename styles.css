@@ -63,6 +63,10 @@ button:active {
     left: 25px;
 }
 
+.content-text {
+    background-color: black;
+}
+
 .back-button {
     float: right;
     transform: translate(0, -80px);

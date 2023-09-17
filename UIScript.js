@@ -72,11 +72,55 @@ export function DisplayDate(date) {
     dateText.textContent = formattedDate;
 }
 
-export function DisplayNewMessage(text) {
-    const operationText = document.querySelector(".list-message");
+export function DrawTableInContentMessage(hunters) {
+    const contentText = document.querySelector(".content");
+    const tableWrapper = document.createElement("div");
+
+    DrawTable(hunters);
+    const table = document.querySelector("table");
+    tableWrapper.appendChild(table);
+
+    tableWrapper.style.overflow = "auto"; // Добавляем прокрутку
+    tableWrapper.style.maxHeight = "425px";
+
+    contentText.innerHTML = "";
+    contentText.appendChild(tableWrapper);
+}
+
+export function DisplayNewMessage(text, id, contentText, messageType, hunters) {
+    const messageText = document.querySelector(".list-message");
     const listItem = document.createElement("li");
     listItem.textContent = text;
-    operationText.appendChild(listItem);
+    listItem.setAttribute("class", "new-message");
+    listItem.setAttribute("id", id.toString());
+    listItem.setAttribute("data-message-type", messageType);
+
+    listItem.addEventListener('click', function () {
+        if (messageType === "table") {
+            const table = DrawTableInContentMessage(hunters);
+            table.setAttribute("data-message-type", "table");
+        } else {
+            DisplayNewTextMessage(contentText, id);
+        }
+    
+    });
+
+    messageText.appendChild(listItem);
+    messageText.insertBefore(listItem, messageText.firstChild);
+
+}
+
+export function DisplayNewTextMessage(text, id) {
+    const messageText = document.querySelector(".content");
+    const existingListItem = document.getElementById(`message-${id}`);
+
+    messageText.innerHTML = "";
+        const listItem = document.createElement("p");
+        listItem.textContent = text;
+        listItem.setAttribute("id", `message-${id}`);
+        listItem.setAttribute("class", "content-text");
+
+        messageText.appendChild(listItem);
 }
 
 
