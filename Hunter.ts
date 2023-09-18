@@ -1,5 +1,6 @@
 import { Character } from './Character.js';
 import { CharacterStat } from './CharacterStat.js'
+import { HunterStat } from './HunterStat';
 import { Department } from './Department.js';
 import { InvestigationDepartment } from './InvestigationDepartment.js';
 import { MilitaryDepartment } from './MilitaryDepartment.js';
@@ -12,6 +13,16 @@ import { SeekerDepartment } from './SeekerDepartment.js';
 import { MagicDepartment } from './MagicDepartment.js';
 
 export class Hunter extends Character {
+    private type: string;
+    private activity: string;
+    private name: string;
+    private surname: string;
+    private age: number;
+    private gender: string;
+    private hunterStat: HunterStat;
+    private department: Department;
+
+    
     constructor(name, surname, age, gender) {
         super();
         this.type = "Человек";
@@ -20,24 +31,23 @@ export class Hunter extends Character {
         this.surname = surname;
         this.age = age;
         this.gender = gender;
-        this.characterStat = new CharacterStat(gender, age);
-        this.characterStat.getStat();
+        this.hunterStat = new HunterStat(gender, age);
 
-        if (this.characterStat.strength >= 35) {
+        if (this.hunterStat.GetStats("strength") >= 35) {
             this.department = new MilitaryDepartment();
-        } else if (this.characterStat.attentivenes >= 35) {
+        } else if (this.hunterStat.GetStats("attentivenes") >= 35) {
             this.department = new InvestigationDepartment();
-        } else if (this.characterStat.intellegence >= 35) {
+        } else if (this.hunterStat.GetStats("intellegence") >= 35) {
             this.department = new KeeperDepartment();
-        } else if (this.characterStat.survivalSkill >= 35) {
+        } else if (this.hunterStat.GetStats("survivalSkill") >= 35) {
             this.department = new MedicalDepartment();
-        } else if (this.characterStat.totalKnowledge >= 35) {
+        } else if (this.hunterStat.GetStats("totalKnowledge") >= 35) {
             this.department = new BiologicalDepartment();
-        } else if (this.characterStat.technicalKnowledge >= 35) {
+        } else if (this.hunterStat.GetStats("technicalKnowledge") >= 35) {
             this.department = new EngineerDepartment();
-        } else if (this.characterStat.magicEnergy >= 3) {
+        } else if (this.hunterStat.GetStats("magicEnergy") >= 3) {
             this.department = new SeekerDepartment();
-        } else if (this.characterStat.magicEnergy >= 3 && this.characterStat.willPower >= 30) {
+        } else if (this.hunterStat.GetStats("magicEnergy") >= 3 && this.hunterStat.GetStats("willPower") >= 30) {
             this.department = new MagicDepartment();
         } else {
             this.department = new ReserveDepartment();
