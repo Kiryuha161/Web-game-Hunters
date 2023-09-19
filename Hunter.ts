@@ -13,16 +13,10 @@ import { SeekerDepartment } from './SeekerDepartment.js';
 import { MagicDepartment } from './MagicDepartment.js';
 
 export class Hunter extends Character {
-    private type: string;
-    private activity: string;
-    private name: string;
-    private surname: string;
-    private age: number;
-    private gender: string;
-    private hunterStat: HunterStat;
-    private department: Department;
+   
+    protected hunterStat: HunterStat;
+    protected department: Department;
 
-    
     constructor(name, surname, age, gender) {
         super();
         this.type = "Человек";

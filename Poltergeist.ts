@@ -1,8 +1,10 @@
 import { Character } from './Character.js';
 import { CharacterStat } from './CharacterStat.js';
-import { PoltergeistStat} from './PoltergeistStat.js';
+import { PoltergeistStat} from './PoltergeistStat';
 
-class Poltergeist extends Character {
+export class Poltergeist extends Character {
+    protected poltergeistStat: PoltergeistStat;
+  
     constructor(name, surname, age, gender) {
         super();
         this.type = "Нежить";
@@ -11,7 +13,6 @@ class Poltergeist extends Character {
         this.surname = surname;
         this.age = age;
         this.gender = gender;
-        this.characterStat = new PoltergeistStat(gender, age);
-        this.characterStat.getStat();
+        this.poltergeistStat = new PoltergeistStat(gender, age);
     }
 }
