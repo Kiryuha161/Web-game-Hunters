@@ -1,0 +1,22 @@
+{
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+    "typescript.tsdk": "C:/Users/Windows 10/AppData/Roaming/npm/node_modules//typescript//lib",
+    "liveServer.settings.ChromeDebuggingAttachment": false,
+    "liveServer.settings.ignoreFiles": [
+
+        ".vscode/**",
+        "**/*.scss",
+        "**/*.sass",
+        "**/*.ts"
+    ],
+    "liveServer.settings.mount": [
+
+    ],
+    "liveServer.settings.port": 0,
+    "liveServer.settings.root": "",
+    "editor.fontLigatures": false,
+    "editor.fontVariations": false,
+    "css.styleSheets": [
+
+    ]
+}
