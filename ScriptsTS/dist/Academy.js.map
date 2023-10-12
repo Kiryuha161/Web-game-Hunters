@@ -1,1 +1,1 @@
-{"version":3,"file":"Academy.js","sourceRoot":"","sources":["../Academy.ts"],"names":[],"mappings":"AAEA;IAMI;QACI,IAAI,IAAI,CAAC,WAAW,KAAK,OAAO,EAAE;YAC9B,MAAM,IAAI,KAAK,CAAC,oDAAoD,CAAC,CAAC;SACzE;IACL,CAAC;IACL,cAAC;AAAD,CAAC,AAXD,IAWC"}
+{"version":3,"file":"Academy.js","sourceRoot":"","sources":["../Academy.ts"],"names":[],"mappings":"AAOA;IAYI;QACI,IAAI,IAAI,CAAC,WAAW,KAAK,OAAO,EAAE;YAC9B,MAAM,IAAI,KAAK,CAAC,oDAAoD,CAAC,CAAC;SACzE;IACL,CAAC;IACL,cAAC;AAAD,CAAC,AAjBD,IAiBC"}

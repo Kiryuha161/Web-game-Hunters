@@ -1,7 +1,7 @@
 var Academy = /** @class */ (function () {
     function Academy() {
         if (this.constructor === Academy) {
-            throw new Error("�� �� ������ ���������� ����������� ����� ��������");
+            throw new Error("Вы не можете вывызывать абстрактный класс академии");
         }
     }
     return Academy;

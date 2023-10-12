@@ -18,12 +18,17 @@ import { Hunter } from './Hunter.js';
 import { Utilits } from './Utilits.js';
 var RuasAcademy = /** @class */ (function (_super) {
     __extends(RuasAcademy, _super);
-    function RuasAcademy() {
+    function RuasAcademy(region) {
         var _this = _super.call(this) || this;
         _this.name = "Руасская академия охоты";
-        _this.capacityApplicant = 30;
-        _this.capacityHunters = Math.ceil(_this.capacityApplicant * (Utilits.GetRandomNumber(60, 80) / 100));
+        _this.capacityApplicants = 30;
+        _this.capacityHunters = Math.ceil(_this.capacityApplicants * (Utilits.GetRandomNumber(60, 80) / 100));
         _this.hunters = new Array();
+        _this.region = region;
+        _this.territory = _this.region.GetTerritory(0);
+        _this.area = _this.territory.GetArea(1);
+        _this.city = _this.area.GetCity(0);
+        _this.district = _this.city.GetDistrict(0);
         return _this;
     }
     RuasAcademy.prototype.SetHunters = function () {
@@ -51,6 +56,40 @@ var RuasAcademy = /** @class */ (function (_super) {
     RuasAcademy.prototype.StartMessage = function (message, world, academy, date) {
         this.GreetingMessage(message, world, academy, date);
         this.ListGraduate(message, world, date);
+    };
+    RuasAcademy.prototype.RaportAboutDangerRatio = function (message, region, date) {
+        message.PerformListMessageEvent("\u041E\u0442\u0447\u0451\u0442 \u043E \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0438 \u0440\u0435\u0433\u0438\u043E\u043D\u0430", "\u0412 \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0438\u0439 \u043C\u043E\u043C\u0435\u043D\u0442, \u043C\u044B \u043D\u0430\u0431\u043B\u044E\u0434\u0430\u0435\u043C \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0443\u044E \u043A\u0430\u0440\u0442\u0438\u043D\u0443: \u043A\u043E\u044D\u0444\u0444\u0438\u0446\u0438\u0435\u043D\u0442 \u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u0438 \u0440\u0435\u0433\u0438\u043E\u043D\u0430 - ".concat(Number(region.GetDangerRatio().toFixed(2))), "Академия", date);
+    };
+    RuasAcademy.prototype.GetInfo = function (info) {
+        switch (info) {
+            case "name":
+                return this.name;
+                break;
+            case "capacityHunters":
+                return this.capacityHunters;
+                break;
+            case "capacityApplicants":
+                return this.capacityApplicants;
+                break;
+            case "region":
+                return this.region.GetInfo("name");
+                break;
+            case "territory":
+                return this.territory.GetInfo("name");
+                break;
+            case "area":
+                return this.area.GetInfo("name");
+                break;
+            case "city":
+                return this.city.GetInfo("name");
+                break;
+            case "district":
+                return this.district.GetInfo("name");
+                break;
+            default:
+                return "Нет данных";
+                break;
+        }
     };
     return RuasAcademy;
 }(Academy));

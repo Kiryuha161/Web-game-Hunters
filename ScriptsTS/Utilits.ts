@@ -3,6 +3,13 @@ export class Utilits {
         return Math.floor(Math.random() * (max - min) + min);
     }
 
+    public static GetFloatRandomNumber(min: number, max: number) {
+        const randomFloat = (Math.random() * (max - min) + min);
+        const roundFloat = Number(randomFloat.toFixed(2));
+        
+        return roundFloat;
+    }
+
     public static GetName(lang: string, gender: string): string {
         let nameList: string[] = [];
 

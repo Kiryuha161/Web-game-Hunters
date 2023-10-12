@@ -3,15 +3,21 @@ import { Hunter } from './Hunter.js';
 import { Utilits } from './Utilits.js';
 import { Message } from './Message.js';
 import { World } from './World.js';
+import { Region } from './Region.js';
 
 export class RuasAcademy extends Academy {
 
-    constructor() {
+    constructor(region: Region) {
         super();
         this.name = "Руасская академия охоты";
-        this.capacityApplicant = 30;
-        this.capacityHunters = Math.ceil(this.capacityApplicant * (Utilits.GetRandomNumber(60, 80) / 100));
+        this.capacityApplicants = 30;
+        this.capacityHunters = Math.ceil(this.capacityApplicants * (Utilits.GetRandomNumber(60, 80) / 100));
         this.hunters = new Array();
+        this.region = region;
+        this.territory = this.region.GetTerritory(0);
+        this.area = this.territory.GetArea(1);
+        this.city = this.area.GetCity(0);
+        this.district = this.city.GetDistrict(0);
     }
 
     public SetHunters() {
@@ -44,6 +50,42 @@ export class RuasAcademy extends Academy {
     public StartMessage(message, world, academy, date) {
         this.GreetingMessage(message, world, academy, date);
         this.ListGraduate(message, world, date);
+    }
+
+    public RaportAboutDangerRatio(message: Message, region: Region, date: string): void {
+        message.PerformListMessageEvent(`Отчёт о состоянии региона`, `В настоящий момент, мы наблюдаем следующую картину: коэффициент опасности региона - ${Number(region.GetDangerRatio().toFixed(2))}`, "Академия", date);
+    }
+
+    public GetInfo(info): string | number {
+        switch(info) {
+            case "name":
+                return this.name;
+                break;
+            case "capacityHunters":
+                return this.capacityHunters;
+                break;
+            case "capacityApplicants":
+                return this.capacityApplicants;
+                break;
+            case "region":
+                return this.region.GetInfo("name");
+                break;
+            case "territory":
+                return this.territory.GetInfo("name");
+                break;
+            case "area":
+                return this.area.GetInfo("name");
+                break;
+            case "city":
+                return this.city.GetInfo("name");
+                break;
+            case "district":
+                return this.district.GetInfo("name");
+                break;
+            default:
+                return "Нет данных";
+                break;
+        }
     }
 }
 

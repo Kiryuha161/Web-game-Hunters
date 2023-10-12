@@ -4,6 +4,11 @@ var Utilits = /** @class */ (function () {
     Utilits.GetRandomNumber = function (min, max) {
         return Math.floor(Math.random() * (max - min) + min);
     };
+    Utilits.GetFloatRandomNumber = function (min, max) {
+        var randomFloat = (Math.random() * (max - min) + min);
+        var roundFloat = Number(randomFloat.toFixed(2));
+        return roundFloat;
+    };
     Utilits.GetName = function (lang, gender) {
         var nameList = [];
         if (lang === "rus") {

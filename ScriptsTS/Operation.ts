@@ -1,5 +1,9 @@
-import { RuasRegion } from './RuasRegion.js';
+import { Region } from './Region.js';
 import { Hunter } from './Hunter.js';
+import { Area } from './Area.js';
+import { City } from './City.js';
+import { District } from './District.js';
+import { Territory } from './Territory.js';
 
 export class Operation {
     protected name: string;
@@ -10,5 +14,9 @@ export class Operation {
     
     protected hunters: Hunter[];
     protected captainGroupHunters: Hunter;
-    //private region: Region;
+    protected region: Region;
+    protected territory: Territory;
+    protected area: Area;
+    protected city: City;
+    protected district: District;
 }
