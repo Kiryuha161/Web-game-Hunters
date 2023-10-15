@@ -49,6 +49,9 @@ export class World {
             message.PerformListMessageEvent("Вы получили новое задание E-категории", this.lightOperations[idEOperation].ShowStartOperationInfo(), "Бюро заявок", this.GetFullDate());
 
             this.lastGetNewEOperation.setTime(this.gameDate.getTime());
+
+            region.GetTerritory(lightOperation.GetGeoInfo("territory")).GetArea(lightOperation.GetGeoInfo("area")).GetCity(lightOperation.GetGeoInfo("city")).GetDistrict(lightOperation.GetGeoInfo("district")).SetDangerRatio(0.1);
+
         }
     }
 }

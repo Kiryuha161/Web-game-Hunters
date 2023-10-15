@@ -3,6 +3,7 @@ import { City } from "./City.js";
 import { District } from "./District.js";
 import { Territory } from "./Territory.js";
 import { Utilits } from "./Utilits.js";
+import { escapeLeadingUnderscores } from "./node_modules/typescript/lib/typescript.js";
 
 export class Region {
     protected name: string;
@@ -25,7 +26,7 @@ export class Region {
     }
 
     public GetInfo(info): string | number {
-         switch (info) {
+        switch (info) {
             case "name":
                 return this.name;
                 break;
@@ -38,34 +39,35 @@ export class Region {
             default:
                 return "Нет данных";
                 break;
-         }
+        }
     }
 
-    public GetTerritory(index: number): Territory {
-        /*for (let i = 0; i < this.territiories.length; i++) {
-            this.dangerRatio += this.territiories[i].GetDangerRatio();
-        }*/
-        
-        return this.territiories[index];
+    public GetTerritory(index: number): Territory;
+    public GetTerritory(name: string): Territory;
+
+    public GetTerritory(parameter: number | string): Territory {
+        if (typeof parameter === "number") {
+            return this.territiories[parameter];
+        } else {
+            return this.territiories.find(t => t.GetInfo("name") === parameter);
+        }
     }
 
-    public GetTerritories() : Territory[] {
-       /* for (let i = 0; i < this.territiories.length; i++) {
-            this.dangerRatio += this.territiories[i].GetDangerRatio();
-        }*/
-        
+    public GetTerritories(): Territory[] {
         return this.territiories;
     }
 
     public CollectAreas() {
-        for (let i = 0; i < this.collectTerritories.length; i++){
+        for (let i = 0; i < this.collectTerritories.length; i++) {
             this.collectAreas.concat(this.collectTerritories[i].GetAreas());
+            this.dangerRatio += this.collectTerritories[i].GetDangerRatio();
         }
     }
 
     public CollectCities() {
         for (let i = 0; i < this.collectAreas.length; i++) {
             this.collectCities.concat(this.collectAreas[i].GetCities());
+            this.dangerRatio += this.collectAreas[i].GetDangerRatio();
         }
     }
 
@@ -82,12 +84,10 @@ export class Region {
         this.CollectDistricts();
     }
 
-    public GetDangerRatio() : number {
-        for (let i = 0; i < this.territiories.length; i++) {
-            this.dangerRatio += this.territiories[i].GetDangerRatio();
-        }
-        
+    public GetDangerRatio(): number {
         return this.dangerRatio;
     }
 }
+
+
 

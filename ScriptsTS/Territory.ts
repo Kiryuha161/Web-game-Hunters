@@ -19,14 +19,10 @@ export class Territory {
     }
 
     public GetDangerRatio() : number {
-        /*for (let i = 0; i < this.areas.length; i++) {
-            this.dangerRatio += this.areas[i].GetDangerRatio();
-        }*/
-        
         return this.dangerRatio;
     }
 
-    public SetDangerRatio(addRatio) {
+    public SetDangerRatio(addRatio: number) {
         this.dangerRatio += addRatio;
     }
 
@@ -51,15 +47,18 @@ export class Territory {
         }
     }
 
-    public GetArea(index: number): Area {
-        return this.areas[index];
+    public GetArea(index: number): Area;
+    public GetArea(name: string): Area;
+
+    public GetArea(parameter: number | string): Area {
+        if (typeof parameter === "number") {
+            return this.areas[parameter];
+        } else {
+            return this.areas.find(t => t.GetInfo("name") === parameter);
+        }
     }
 
     public GetAreas() : Area[] {
-       /* for (let i = 0; i < this.areas.length; i++) {
-            this.dangerRatio += this.areas[i].GetDangerRatio();
-        }*/
-        
         return this.areas;
     }
 

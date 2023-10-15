@@ -15,7 +15,7 @@ export class District {
         return this.dangerRatio;
     }
 
-    public SetDangerRatio(addRatio) {
+    public SetDangerRatio(addRatio: number) {
         this.dangerRatio += addRatio;
     }
 

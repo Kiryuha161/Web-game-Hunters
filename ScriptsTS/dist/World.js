@@ -32,6 +32,7 @@ var World = /** @class */ (function () {
             var idEOperation = this.lightOperations.length - 1;
             message.PerformListMessageEvent("Вы получили новое задание E-категории", this.lightOperations[idEOperation].ShowStartOperationInfo(), "Бюро заявок", this.GetFullDate());
             this.lastGetNewEOperation.setTime(this.gameDate.getTime());
+            region.GetTerritory(lightOperation.GetGeoInfo("territory")).GetArea(lightOperation.GetGeoInfo("area")).GetCity(lightOperation.GetGeoInfo("city")).GetDistrict(lightOperation.GetGeoInfo("district")).SetDangerRatio(0.1);
         }
     };
     return World;

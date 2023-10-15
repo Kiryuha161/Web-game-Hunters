@@ -9,9 +9,6 @@ var Territory = /** @class */ (function () {
         }
     }
     Territory.prototype.GetDangerRatio = function () {
-        /*for (let i = 0; i < this.areas.length; i++) {
-            this.dangerRatio += this.areas[i].GetDangerRatio();
-        }*/
         return this.dangerRatio;
     };
     Territory.prototype.SetDangerRatio = function (addRatio) {
@@ -36,13 +33,15 @@ var Territory = /** @class */ (function () {
                 break;
         }
     };
-    Territory.prototype.GetArea = function (index) {
-        return this.areas[index];
+    Territory.prototype.GetArea = function (parameter) {
+        if (typeof parameter === "number") {
+            return this.areas[parameter];
+        }
+        else {
+            return this.areas.find(function (t) { return t.GetInfo("name") === parameter; });
+        }
     };
     Territory.prototype.GetAreas = function () {
-        /* for (let i = 0; i < this.areas.length; i++) {
-             this.dangerRatio += this.areas[i].GetDangerRatio();
-         }*/
         return this.areas;
     };
     Territory.prototype.CollectAllGeography = function () {

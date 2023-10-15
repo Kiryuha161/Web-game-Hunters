@@ -29,26 +29,27 @@ var Region = /** @class */ (function () {
                 break;
         }
     };
-    Region.prototype.GetTerritory = function (index) {
-        /*for (let i = 0; i < this.territiories.length; i++) {
-            this.dangerRatio += this.territiories[i].GetDangerRatio();
-        }*/
-        return this.territiories[index];
+    Region.prototype.GetTerritory = function (parameter) {
+        if (typeof parameter === "number") {
+            return this.territiories[parameter];
+        }
+        else {
+            return this.territiories.find(function (t) { return t.GetInfo("name") === parameter; });
+        }
     };
     Region.prototype.GetTerritories = function () {
-        /* for (let i = 0; i < this.territiories.length; i++) {
-             this.dangerRatio += this.territiories[i].GetDangerRatio();
-         }*/
         return this.territiories;
     };
     Region.prototype.CollectAreas = function () {
         for (var i = 0; i < this.collectTerritories.length; i++) {
             this.collectAreas.concat(this.collectTerritories[i].GetAreas());
+            this.dangerRatio += this.collectTerritories[i].GetDangerRatio();
         }
     };
     Region.prototype.CollectCities = function () {
         for (var i = 0; i < this.collectAreas.length; i++) {
             this.collectCities.concat(this.collectAreas[i].GetCities());
+            this.dangerRatio += this.collectAreas[i].GetDangerRatio();
         }
     };
     Region.prototype.CollectDistricts = function () {
@@ -63,9 +64,6 @@ var Region = /** @class */ (function () {
         this.CollectDistricts();
     };
     Region.prototype.GetDangerRatio = function () {
-        for (var i = 0; i < this.territiories.length; i++) {
-            this.dangerRatio += this.territiories[i].GetDangerRatio();
-        }
         return this.dangerRatio;
     };
     return Region;

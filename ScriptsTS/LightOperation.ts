@@ -32,7 +32,21 @@ export class LightOperation extends Operation {
         return this.startOperationInfo;
     }
 
-    public GetGeoInfo(): string {
-        return
+    public GetGeoInfo(name: string): string {
+        if (name === "region") {
+            return this.region.GetInfo("name").toString();
+        } else if (name === "territory") {
+            return this.territory.GetInfo("name").toString();
+        } else if (name === "area") {
+            return this.area.GetInfo("name").toString();
+        } else if (name === "city") {
+            return this.city.GetInfo("name").toString();
+        } else if (name === "district") {
+            return this.district.GetInfo("name").toString();
+        } else {
+            return "Нет такой команды в функции получения географической информации"
+        }
     }
+
+        
 }

@@ -8,9 +8,6 @@ var Area = /** @class */ (function () {
         }
     }
     Area.prototype.GetDangerRatio = function () {
-        /*for (let i = 0; i < this.cities.length; i++) {
-            this.dangerRatio += this.cities[i].GetDangerRatio();
-        }*/
         return this.dangerRatio;
     };
     Area.prototype.SetDangerRatio = function (addRatio) {
@@ -35,8 +32,13 @@ var Area = /** @class */ (function () {
                 break;
         }
     };
-    Area.prototype.GetCity = function (index) {
-        return this.cities[index];
+    Area.prototype.GetCity = function (parameter) {
+        if (typeof parameter === "number") {
+            return this.cities[parameter];
+        }
+        else {
+            return this.cities.find(function (t) { return t.GetInfo("name") === parameter; });
+        }
     };
     Area.prototype.GetCities = function () {
         return this.cities;

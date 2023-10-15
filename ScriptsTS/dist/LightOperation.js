@@ -41,8 +41,25 @@ var LightOperation = /** @class */ (function (_super) {
     LightOperation.prototype.ShowStartOperationInfo = function () {
         return this.startOperationInfo;
     };
-    LightOperation.prototype.GetGeoInfo = function () {
-        return;
+    LightOperation.prototype.GetGeoInfo = function (name) {
+        if (name === "region") {
+            return this.region.GetInfo("name").toString();
+        }
+        else if (name === "territory") {
+            return this.territory.GetInfo("name").toString();
+        }
+        else if (name === "area") {
+            return this.area.GetInfo("name").toString();
+        }
+        else if (name === "city") {
+            return this.city.GetInfo("name").toString();
+        }
+        else if (name === "district") {
+            return this.district.GetInfo("name").toString();
+        }
+        else {
+            return "Нет такой команды в функции получения географической информации";
+        }
     };
     return LightOperation;
 }(Operation));

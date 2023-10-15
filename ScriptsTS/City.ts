@@ -22,7 +22,7 @@ export class City {
         return this.dangerRatio;
     }
 
-    public SetDangerRatio(addRatio) {
+    public SetDangerRatio(addRatio: number) {
         this.dangerRatio += addRatio;
     }
 
@@ -47,15 +47,18 @@ export class City {
         }
     }
 
-    public GetDistrict(index: number): District {
-        return this.districts[index];
+    public GetDistrict(index: number): District;
+    public GetDistrict(name: string): District;
+
+    public GetDistrict(parameter: number | string): District {
+        if (typeof parameter === "number") {
+            return this.districts[parameter];
+        } else {
+            return this.districts.find(t => t.GetInfo("name") === parameter);
+        }
     }
 
     public GetDistricts() : District[] {
-        /*for (let i = 0; i < this.districts.length; i++) {
-            this.dangerRatio += this.districts[i].GetDangerRatio();
-        }*/
-        
         return this.districts;
     }
 

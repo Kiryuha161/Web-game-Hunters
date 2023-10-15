@@ -17,15 +17,11 @@ export class Area {
     }
 
     public GetDangerRatio() : number {
-        /*for (let i = 0; i < this.cities.length; i++) {
-            this.dangerRatio += this.cities[i].GetDangerRatio();
-        }*/
-        
         return this.dangerRatio;
     }
 
 
-    public SetDangerRatio(addRatio) {
+    public SetDangerRatio(addRatio: number) {
         this.dangerRatio += addRatio;
     }
 
@@ -51,8 +47,15 @@ export class Area {
         }
     }
 
-    public GetCity(index: number): City {
-        return this.cities[index];
+    public GetCity(index: number): City;
+    public GetCity(name: string): City;
+
+    public GetCity(parameter: number | string): City {
+        if (typeof parameter === "number") {
+            return this.cities[parameter];
+        } else {
+            return this.cities.find(t => t.GetInfo("name") === parameter);
+        }
     }
 
     public GetCities() : City[] {

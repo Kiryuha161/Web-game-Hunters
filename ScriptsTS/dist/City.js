@@ -36,13 +36,15 @@ var City = /** @class */ (function () {
                 break;
         }
     };
-    City.prototype.GetDistrict = function (index) {
-        return this.districts[index];
+    City.prototype.GetDistrict = function (parameter) {
+        if (typeof parameter === "number") {
+            return this.districts[parameter];
+        }
+        else {
+            return this.districts.find(function (t) { return t.GetInfo("name") === parameter; });
+        }
     };
     City.prototype.GetDistricts = function () {
-        /*for (let i = 0; i < this.districts.length; i++) {
-            this.dangerRatio += this.districts[i].GetDangerRatio();
-        }*/
         return this.districts;
     };
     City.prototype.CollectAllGeography = function () {
