@@ -30,8 +30,6 @@ var TerritoryJugras = /** @class */ (function (_super) {
         _this.collectAreas = _this.areas;
         _this.CollectAllGeography();
         return _this;
-        /* this.collectAreas = this.areas;
-         this.CollectAllGeography();*/
     }
     return TerritoryJugras;
 }(Territory));

@@ -9,9 +9,9 @@ var Territory = /** @class */ (function () {
         }
     }
     Territory.prototype.GetDangerRatio = function () {
-        for (var i = 0; i < this.areas.length; i++) {
+        /*for (let i = 0; i < this.areas.length; i++) {
             this.dangerRatio += this.areas[i].GetDangerRatio();
-        }
+        }*/
         return this.dangerRatio;
     };
     Territory.prototype.SetDangerRatio = function (addRatio) {

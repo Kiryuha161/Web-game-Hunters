@@ -9,9 +9,9 @@ var City = /** @class */ (function () {
         }
     }
     City.prototype.GetDangerRatio = function () {
-        for (var i = 0; i < this.districts.length; i++) {
+        /*for (let i = 0; i < this.districts.length; i++) {
             this.dangerRatio += this.districts[i].GetDangerRatio();
-        }
+        }*/
         return this.dangerRatio;
     };
     City.prototype.SetDangerRatio = function (addRatio) {

@@ -42,9 +42,9 @@ export class Region {
     }
 
     public GetTerritory(index: number): Territory {
-        for (let i = 0; i < this.territiories.length; i++) {
+        /*for (let i = 0; i < this.territiories.length; i++) {
             this.dangerRatio += this.territiories[i].GetDangerRatio();
-        }
+        }*/
         
         return this.territiories[index];
     }

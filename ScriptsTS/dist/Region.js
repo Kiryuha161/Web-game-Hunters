@@ -30,9 +30,9 @@ var Region = /** @class */ (function () {
         }
     };
     Region.prototype.GetTerritory = function (index) {
-        for (var i = 0; i < this.territiories.length; i++) {
+        /*for (let i = 0; i < this.territiories.length; i++) {
             this.dangerRatio += this.territiories[i].GetDangerRatio();
-        }
+        }*/
         return this.territiories[index];
     };
     Region.prototype.GetTerritories = function () {

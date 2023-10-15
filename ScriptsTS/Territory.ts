@@ -19,9 +19,9 @@ export class Territory {
     }
 
     public GetDangerRatio() : number {
-        for (let i = 0; i < this.areas.length; i++) {
+        /*for (let i = 0; i < this.areas.length; i++) {
             this.dangerRatio += this.areas[i].GetDangerRatio();
-        }
+        }*/
         
         return this.dangerRatio;
     }

@@ -15,9 +15,9 @@ export class City {
     }
 
     public GetDangerRatio() : number {
-        for (let i = 0; i < this.districts.length; i++) {
+        /*for (let i = 0; i < this.districts.length; i++) {
             this.dangerRatio += this.districts[i].GetDangerRatio();
-        }
+        }*/
        
         return this.dangerRatio;
     }
